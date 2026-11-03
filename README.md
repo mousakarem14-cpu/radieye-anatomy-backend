@@ -45,3 +45,36 @@ main{max-width:1320px;margin:auto;padding:28px 28px 70px}.page{display:none;anim
 <section id="library" class="page"><div class="page-head"><div><div class="eyebrow">KNOWLEDGE LIBRARY</div><h1 class="page-title" data-i18n="libraryTitle">المكتبة الطبية</h1><p class="page-intro" data-i18n="libraryIntro">استكشف المحتوى حسب المجال أو الموضوع أو مستوى التعلم.</p></div><span class="pill" data-i18n="demoLabel">نسخة تجريبية للمحتوى</span></div>
  <div class="split"><aside class# radieye-anatomy-backend
 RadiEye Anatomy Backend
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });import { getAuth, validatePassword } from "firebase/auth";status.containsLowercaseLetterimport { getAuth, signOut } from "firebase/auth";
+
+const auth = getAuth();
+signOut(auth).then(() => {
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});
